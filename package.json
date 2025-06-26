@@ -6,7 +6,13 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"No linter configured\"",
+    "docker:build": "docker build -t teams-ai-bot .",
+    "docker:run": "docker run -p 3978:3978 --env-file .env teams-ai-bot",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "validate": "node -c src/index.js && node -c src/teamsBot.js && node -c services/aiFoundryService.js && node -c services/speechService.js"
   },
   "keywords": ["teams", "bot", "ai", "voice", "speech", "foundry"],
   "author": "Roberto Borges",
