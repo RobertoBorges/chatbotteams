@@ -1,0 +1,53 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.16",
+    "version": "1.0.0",
+    "id": "{{BOT_ID}}",
+    "packageName": "com.teams.chatbot.aifoundry",
+    "developer": {
+        "name": "Roberto Borges",
+        "websiteUrl": "https://github.com/RobertoBorges/chatbotteams",
+        "privacyUrl": "https://github.com/RobertoBorges/chatbotteams/blob/main/PRIVACY.md",
+        "termsOfUseUrl": "https://github.com/RobertoBorges/chatbotteams/blob/main/TERMS.md"
+    },
+    "icons": {
+        "color": "icon-color.png",
+        "outline": "icon-outline.png"
+    },
+    "name": {
+        "short": "AI Foundry Bot",
+        "full": "AI Foundry Teams Bot with Voice Support"
+    },
+    "description": {
+        "short": "AI-powered bot with voice and speech capabilities",
+        "full": "A Microsoft Teams bot that integrates with AI Foundry endpoints to provide intelligent conversations with voice input and speech output support."
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "{{BOT_ID}}",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "supportsCalling": true,
+            "supportsVideo": false
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "*.api.ai-foundry.com",
+        "*.speech.microsoft.com",
+        "*.cognitiveservices.azure.com"
+    ],
+    "webApplicationInfo": {
+        "id": "{{BOT_ID}}",
+        "resource": "https://RscPermission.ReadWrite.ChatMessage.All"
+    }
+}
