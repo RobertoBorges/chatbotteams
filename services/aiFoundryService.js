@@ -13,8 +13,7 @@ class AIFoundryService {
                 return "AI Foundry is not configured. Please set AI_FOUNDRY_API_KEY environment variable.";
             }
 
-            const response = await axios.post(`${this.baseUrl}/v1/chat/completions`, {
-                model: this.model,
+            const response = await axios.post(`${this.baseUrl}/chat/completions?api-version=2025-01-01-preview`, {
                 messages: [
                     {
                         role: "system",
@@ -70,8 +69,7 @@ class AIFoundryService {
                 return;
             }
 
-            const response = await axios.post(`${this.baseUrl}/v1/chat/completions`, {
-                model: this.model,
+            const response = await axios.post(`${this.baseUrl}/chat/completions?api-version=2025-01-01-preview`, {
                 messages: [
                     {
                         role: "system",
